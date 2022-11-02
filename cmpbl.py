@@ -13,5 +13,6 @@ while line := x.readline():  # https://docs.python.org/3.8/reference/expressions
     line = line.rstrip('\r\n')
     match = re.match(reo1, line)
     addr, val1, val2 = int(match.group(1)) - 1, int(match.group(3), 8), int(match.group(5), 8)
-    lineHex = "{0:x}{1}{2:x}{3}{4:x}{5}".format(addr, match.group(2), val1, match.group(4), val2, match.group(6))
+    # lineHex = "{0:x}{1}{2:x}{3}{4:x}{5}".format(addr, match.group(2), val1, match.group(4), val2, match.group(6))  #ok, but slightly misaligned
+    lineHex = "{:x}{:2}{:x}{}{:x}{}".format(addr, match.group(2), val1, match.group(4), val2, match.group(6))
     print(lineHex)
