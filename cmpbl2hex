@@ -2,7 +2,7 @@
 import sys
 import re   # there I have not installed regex module under Python/Cygwin
 usage = 'Intented usage:\n $ cmp -bl file1 file2 | cmpbl2hex'
-reo1 = re.compile(r'^(\d+)(\s+)(\d+)([^\d]+\d?[^\d]+)(\d+)(.*)')
+reo1 = re.compile(r'^(?:\s*)(\d+)(\s+)(\d+)([^\d]+\d?[^\d]+)(\d+)(.*)')
 if sys.argv.__len__() == 2:
     if sys.argv[1] == '-h' or sys.argv[1] == '--help':
         print(usage)
